@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+<!doctype html>
+<html>
+<head>
+    <style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      /* Change the link color to #111 (black) on hover */
+      li a:hover {
+        background-color: #111;
+      }
+      
+      input[type=button], input[type=submit], input[type=reset] {
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      
+      input[type=text]:focus {
+        border: 3px solid #555;
+      }      
+    </style>
+      
+</head>
+<body>
+    <header style = "height: 100px; width: 100%; background-color: #607D8B;" >
+        <h1 style=" color: #fff; text-align: center; padding-top: 25px; font-size: 30px;" > MUSIC STORE </h1>
+        </header>
+        <nav style = "background-color: #607d8b9c;" >
+            <ul>
+            <li> <a href = "http://127.0.0.1:8000/homepage"> HOME PAGE </a> </li>
+           
+            </ul>
+            </nav>
+            <h1><i><b> Update your product : </h1></i></b><br>
+            {{form(form)}}
+            
+<footer style = " height: 100px; background-color:#607D8B; width: 100%; text-align: center;">
+    <h3 style = " color: #fff; text-align: center; padding-top: 10px; font-size: 30px; " >Footer Section</h3>
+    <p> © Copyright ( GLEI Jihed ) </p>
+    </footer>
+</body>
+</html>
+{% endblock %}

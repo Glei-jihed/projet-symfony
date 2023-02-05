@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!doctype html>
+<html>
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+          }
+          
+          li {
+            float: left;
+          }
+          
+          li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+          }
+          
+          /* Change the link color to #111 (black) on hover */
+          li a:hover {
+            background-color: #111;
+          }
+        </style>
+</head>
+<body>
+    <header style = "height: 100px; width: 100%; background-color: #607D8B;" >
+        <h1 style=" color: #fff; text-align: center; padding-top: 25px; font-size: 30px;" > MUSIC STORE </h1>
+        </header>
+    <h1>PRODUCT DESCRIPTION:</h1>
+    <h3><img class="card-img-top" src="{{product.ImgLink}}" alt="product image" width="250" height="250"></h3>
+    <h3>the product ID is : {{ product.id}}</h3><br>
+    <h3>the product is : {{ product.Name}}</h3><br>
+    <h3>the product price is : {{product.Price}}</h3><br>
+    <h3>the product color is : {{product.Color}}</h3><br>
+    <h3>the product date creation  is : {{product.DC}}</h3><br>
+    <footer style = " height: 100px; background-color:#607D8B; width: 100%; text-align: center;">
+        <h3 style = " color: #fff; text-align: center; padding-top: 10px; font-size: 30px; " >Footer Section</h3>
+        <p> © Copyright ( GLEI Jihed ) </p>
+        </footer>
+</body>
+</html>
+{% endblock %}

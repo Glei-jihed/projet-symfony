@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<!doctype html>
+<html>
+<head>
+    <style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      /* Change the link color to #111 (black) on hover */
+      li a:hover {
+        background-color: #111;
+      }
+    </style>
+      
+</head>
+<body>
+    <header style = "height: 100px; width: 100%; background-color: #607D8B;" >
+        <h1 style=" color: #fff; text-align: center; padding-top: 25px; font-size: 30px;" > MUSIC STORE </h1>
+        </header>
+        <nav style = "background-color: #607d8b9c;" >
+            <ul>
+            <li> <a href = "http://127.0.0.1:8000/homepage"> HOME PAGE </a> </li>
+            <li> <a href = "http://127.0.0.1:8000/new/product">CREATION PRODUCT PAGE</a> </li>
+            <li> <a href = "http://127.0.0.1:8000/logout"> LOGOUT </a> </li>
+            <li> <a href = "http://127.0.0.1:8000/registre"> NEW USER </a> </li>
+            
+            </ul>
+            </nav>
+    <h1>Welcome in your Space dear admin</h1><br>
+    {% for product in product%}
+<table class="table table-dark">
+    <thead>
+        <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Color</th>
+        <th scope="col">DateCreation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <th scope="row">{{ product.id}}</th>
+          <td>{{ product.Name}}</td>
+          <td>{{product.Price}}</td>
+          <td>{{product.Color}}</td>
+          <td>{{product.DC}}</td>
+          <td><a href="{{path('product_delete',{id: product.id})}}" class="card-link">DELETE</a></td>
+          <td><a href="{{path('app_update',{id: product.id})}}" class="card-link">éditer</a></td>
+        </tr>
+    </tbody>
+</table>
+{% endfor %}
+<footer style = " height: 100px; background-color:#607D8B; width: 100%; text-align: center;">
+    <h3 style = " color: #fff; text-align: center; padding-top: 10px; font-size: 30px; " >Footer Section</h3>
+    <p> © Copyright ( GLEI Jihed ) </p>
+    </footer>
+</body>
+</html>
+{% endblock %}
